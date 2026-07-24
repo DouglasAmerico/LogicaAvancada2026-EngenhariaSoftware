@@ -1,12 +1,14 @@
-let recepcao : string|null = prompt("Informe o numero 1: ");
-let n1 : number;
+const senhaPadrao : string = "1234";
+let tentativas : number = 3;
 
-if(recepcao == ""){
-    console.log("Precisa ser informado um valor");
-    recepcao = prompt("Informe o numero 1: ");
-    n1 = Number(recepcao);
-}else{
-    n1 = Number(recepcao);
+while(
+        (prompt("Informe a senha") != senhaPadrao) &&
+        (tentativas > 0)
+                                                    ){
+    alert("Informe a senha correta");
+    tentativas--;
+    if(tentativas < 0) {
+        alert("Numero de tentativas estourou")
+    }
 }
 
-console.log("O numero "+n1+" 12 = "+(n1+12));

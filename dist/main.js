@@ -1,13 +1,11 @@
 "use strict";
-let recepcao = prompt("Informe o numero 1: ");
-let n1;
-console.log(typeof (recepcao));
-if (recepcao == "") {
-    console.log("Precisa ser informado um valor");
-    recepcao = prompt("Informe o numero 1: ");
-    n1 = Number(recepcao);
+const senhaPadrao = "1234";
+let tentativas = 3;
+while ((prompt("Informe a senha") != senhaPadrao) &&
+    (tentativas > 0)) {
+    alert("Informe a senha correta");
+    tentativas--;
+    if (tentativas < 0) {
+        alert("Numero de tentativas estourou");
+    }
 }
-else {
-    n1 = Number(recepcao);
-}
-console.log("O numero " + n1 + " 12 = " + (n1 + 12));
