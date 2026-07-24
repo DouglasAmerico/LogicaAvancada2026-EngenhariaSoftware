@@ -1,11 +1,13 @@
 "use strict";
-const nome = prompt("Informe o nome do Aluno(a): ");
-const notas = [];
-const qtd = Number(prompt("Informe a quantidade de notas: "));
-let media = 0;
-for (let index = 0; index < qtd; index++) {
-    notas[index] = Number(prompt("Informe a nota " + (index + 1) + " do aluno(a) " + nome + ": "));
-    media += notas[index];
-    console.log(media);
+let recepcao = prompt("Informe o numero 1: ");
+let n1;
+console.log(typeof (recepcao));
+if (recepcao == "") {
+    console.log("Precisa ser informado um valor");
+    recepcao = prompt("Informe o numero 1: ");
+    n1 = Number(recepcao);
 }
-alert("A media dos valores é " + (media / qtd));
+else {
+    n1 = Number(recepcao);
+}
+console.log("O numero " + n1 + " 12 = " + (n1 + 12));

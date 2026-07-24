@@ -1,12 +1,12 @@
-const nome : string|null = prompt("Informe o nome do Aluno(a): ");
-const notas : number[] = [];
-const qtd : number|null = Number(prompt("Informe a quantidade de notas: "));
-let media : number =0;
+let recepcao : string|null = prompt("Informe o numero 1: ");
+let n1 : number;
 
-for (let index = 0; index < qtd; index++) {
-    notas[index] = Number(prompt("Informe a nota "+(index+1)+" do aluno(a) "+nome+": "));
-    media+= notas[index];
-    console.log(media);
+if(recepcao == ""){
+    console.log("Precisa ser informado um valor");
+    recepcao = prompt("Informe o numero 1: ");
+    n1 = Number(recepcao);
+}else{
+    n1 = Number(recepcao);
 }
 
-alert("A media dos valores é "+(media/qtd));
+console.log("O numero "+n1+" 12 = "+(n1+12));
