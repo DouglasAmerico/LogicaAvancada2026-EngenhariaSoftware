@@ -1,7 +1,29 @@
 "use strict";
-const numero1 = 12;
-const numero2 = 12;
-const soma = (n1, n2) => {
-    alert(n1 + n2);
+let recebe;
+let numero1 = 0, numero2 = 0;
+let valores = [];
+const validaSeNull = (valor) => (valor != null) ? true : false;
+const validaSeVazio = (valor) => (valor != "") ? true : false;
+const validaSeNumeroValido = (valor) => (!isNaN(Number(valor))) ? true : false;
+const validaSeValorENumero = (valor) => ((validaSeNumeroValido(valor)) &&
+    (validaSeVazio(valor)) &&
+    (validaSeNull(valor))) ? true : false;
+const receberValores = (posicao) => {
+    do {
+        recebe = prompt("Informe o valor " + posicao + ": ");
+        if (!validaSeValorENumero(recebe)) {
+            alert("Numero invalido, informe um valor numerico");
+        }
+    } while (!validaSeValorENumero(recebe));
+    return recebe;
 };
-soma(numero1, numero2);
+const converteParaNumber = (posicao) => {
+    return Number(receberValores(posicao));
+};
+alert("Valor final " + converteParaNumber(1));
+for (let index = 0; index < 3; index++) {
+    valores[index] = converteParaNumber(index + 1);
+}
+for (const valor of valores) {
+    console.log(valor);
+}
