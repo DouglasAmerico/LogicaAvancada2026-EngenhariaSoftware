@@ -1,3 +1,8 @@
+type Telefone = {
+    ddd: string,
+    numero: string
+}
+
 type Endereco = {
     logradouro: string,
     numero: string,
@@ -9,6 +14,6 @@ export type Pessoa = {
     id: number|null,
     nome: string|null,
     idade: number|null,
-    telefone: string[],
+    telefone: Telefone[],
     endereco: Endereco[]
 }
